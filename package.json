@@ -1,0 +1,11 @@
+{
+  "name": "com.dgtools.statemachine",
+  "displayName": "DGTools State Machine",
+  "version": "0.0.1",
+  "dependencies": {
+    "com.dgtools.core": ""
+  },
+  "description": "State machine system for unity",
+  "type": "tool",
+  "hideInEditor": false
+}
