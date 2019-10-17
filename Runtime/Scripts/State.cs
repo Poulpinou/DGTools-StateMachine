@@ -4,16 +4,21 @@ namespace DGTools.StateMachine
 {
     public abstract class State : MonoBehaviour
     {
-        //PRIVATE VARIABLES
+        #region Private Variables
+        /// <summary>
+        /// The <see cref="StateMachine"/> that owns this <see cref="State"/>
+        /// </summary>
         protected StateMachine owner;
+        #endregion
 
-        //PROPERTIES
+        #region Properties
         /// <summary>
         /// If a state is locked, it can't be changed
         /// </summary>
-        public virtual bool isLocked { get; set; }
+        public virtual bool IsLocked { get; set; }
+        #endregion
 
-        //METHODS
+        #region Public Methods
         /// <summary>
         /// Called when StateMachine enters in this state
         /// </summary>
@@ -31,7 +36,9 @@ namespace DGTools.StateMachine
             RemoveListeners();
             DestroyImmediate(this, true);
         }
+        #endregion
 
+        #region Runtime Methods
         /// <summary>
         /// Called when this state is destroyed
         /// </summary>
@@ -39,10 +46,12 @@ namespace DGTools.StateMachine
         {
             RemoveListeners();
         }
+        #endregion
 
-        //ABSTRACT METHODS
+        #region Abstract Methods
         protected abstract void AddListeners();
 
         protected abstract void RemoveListeners();
+        #endregion
     }
 }
